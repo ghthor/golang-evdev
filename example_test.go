@@ -11,7 +11,7 @@ func ExampleOpen() {
 }
 
 // Listing accessible input devices.
-func ExampleListInputdevices() {
+func ExampleListInputDevices() {
 	devices, err := ListInputDevices()
 	if err != nil {
 		log.Fatal(err)
