@@ -8,14 +8,13 @@
 //   evdev.EV[evdev.EV_KEY]  // "EV_KEY"
 //   evdev.ByEventType[EV_REL][0]  // "REL_X"
 //
-// Generated on: Linux 3.16.0-4-amd64 #1 SMP Debian 3.16.7-ckt7-1 (2015-03-01) x86_64
+// Generated on: Linux 4.7.2-1-ARCH #1 SMP PREEMPT Sat Aug 20 23:02:56 CEST 2016 x86_64
 
 package evdev
 
 import "strings"
 
 const (
-	EV_VERSION                   = 0x010001
 	EV_SYN                       = 0x00
 	EV_KEY                       = 0x01
 	EV_REL                       = 0x02
@@ -190,7 +189,8 @@ const (
 	KEY_MSDOS                    = 151
 	KEY_COFFEE                   = 152
 	KEY_SCREENLOCK               = KEY_COFFEE
-	KEY_DIRECTION                = 153
+	KEY_ROTATE_DISPLAY           = 153
+	KEY_DIRECTION                = KEY_ROTATE_DISPLAY
 	KEY_CYCLEWINDOWS             = 154
 	KEY_MAIL                     = 155
 	KEY_BOOKMARKS                = 156
@@ -495,6 +495,10 @@ const (
 	KEY_NUMERIC_9                = 0x209
 	KEY_NUMERIC_STAR             = 0x20a
 	KEY_NUMERIC_POUND            = 0x20b
+	KEY_NUMERIC_A                = 0x20c
+	KEY_NUMERIC_B                = 0x20d
+	KEY_NUMERIC_C                = 0x20e
+	KEY_NUMERIC_D                = 0x20f
 	KEY_CAMERA_FOCUS             = 0x210
 	KEY_WPS_BUTTON               = 0x211
 	KEY_TOUCHPAD_TOGGLE          = 0x212
@@ -530,6 +534,24 @@ const (
 	KEY_KBDINPUTASSIST_NEXTGROUP = 0x263
 	KEY_KBDINPUTASSIST_ACCEPT    = 0x264
 	KEY_KBDINPUTASSIST_CANCEL    = 0x265
+	KEY_RIGHT_UP                 = 0x266
+	KEY_RIGHT_DOWN               = 0x267
+	KEY_LEFT_UP                  = 0x268
+	KEY_LEFT_DOWN                = 0x269
+	KEY_ROOT_MENU                = 0x26a
+	KEY_MEDIA_TOP_MENU           = 0x26b
+	KEY_NUMERIC_11               = 0x26c
+	KEY_NUMERIC_12               = 0x26d
+	KEY_AUDIO_DESC               = 0x26e
+	KEY_3D_MODE                  = 0x26f
+	KEY_NEXT_FAVORITE            = 0x270
+	KEY_STOP_RECORD              = 0x271
+	KEY_PAUSE_RECORD             = 0x272
+	KEY_VOD                      = 0x273
+	KEY_UNMUTE                   = 0x274
+	KEY_FASTREVERSE              = 0x275
+	KEY_SLOWREVERSE              = 0x276
+	KEY_DATA                     = 0x275
 	BTN_TRIGGER_HAPPY            = 0x2c0
 	BTN_TRIGGER_HAPPY1           = 0x2c0
 	BTN_TRIGGER_HAPPY2           = 0x2c1
@@ -645,6 +667,7 @@ const (
 	SW_ROTATE_LOCK               = 0x0c
 	SW_LINEIN_INSERT             = 0x0d
 	SW_MUTE_DEVICE               = 0x0e
+	SW_PEN_INSERTED              = 0x0f
 	SW_MAX                       = 0x0f
 	SW_CNT                       = (SW_MAX + 1)
 	MSC_SERIAL                   = 0x00
@@ -677,33 +700,9 @@ const (
 	SND_TONE                     = 0x02
 	SND_MAX                      = 0x07
 	SND_CNT                      = (SND_MAX + 1)
-	ID_BUS                       = 0
-	ID_VENDOR                    = 1
-	ID_PRODUCT                   = 2
-	ID_VERSION                   = 3
-	BUS_PCI                      = 0x01
-	BUS_ISAPNP                   = 0x02
-	BUS_USB                      = 0x03
-	BUS_HIL                      = 0x04
-	BUS_BLUETOOTH                = 0x05
-	BUS_VIRTUAL                  = 0x06
-	BUS_ISA                      = 0x10
-	BUS_I8042                    = 0x11
-	BUS_XTKBD                    = 0x12
-	BUS_RS232                    = 0x13
-	BUS_GAMEPORT                 = 0x14
-	BUS_PARPORT                  = 0x15
-	BUS_AMIGA                    = 0x16
-	BUS_ADB                      = 0x17
-	BUS_I2C                      = 0x18
-	BUS_HOST                     = 0x19
-	BUS_GSC                      = 0x1A
-	BUS_ATARI                    = 0x1B
-	BUS_SPI                      = 0x1C
 )
 
 var ecodes = map[string]int{
-	"EV_VERSION":                   EV_VERSION,
 	"EV_SYN":                       EV_SYN,
 	"EV_KEY":                       EV_KEY,
 	"EV_REL":                       EV_REL,
@@ -878,6 +877,7 @@ var ecodes = map[string]int{
 	"KEY_MSDOS":                    KEY_MSDOS,
 	"KEY_COFFEE":                   KEY_COFFEE,
 	"KEY_SCREENLOCK":               KEY_SCREENLOCK,
+	"KEY_ROTATE_DISPLAY":           KEY_ROTATE_DISPLAY,
 	"KEY_DIRECTION":                KEY_DIRECTION,
 	"KEY_CYCLEWINDOWS":             KEY_CYCLEWINDOWS,
 	"KEY_MAIL":                     KEY_MAIL,
@@ -1183,6 +1183,10 @@ var ecodes = map[string]int{
 	"KEY_NUMERIC_9":                KEY_NUMERIC_9,
 	"KEY_NUMERIC_STAR":             KEY_NUMERIC_STAR,
 	"KEY_NUMERIC_POUND":            KEY_NUMERIC_POUND,
+	"KEY_NUMERIC_A":                KEY_NUMERIC_A,
+	"KEY_NUMERIC_B":                KEY_NUMERIC_B,
+	"KEY_NUMERIC_C":                KEY_NUMERIC_C,
+	"KEY_NUMERIC_D":                KEY_NUMERIC_D,
 	"KEY_CAMERA_FOCUS":             KEY_CAMERA_FOCUS,
 	"KEY_WPS_BUTTON":               KEY_WPS_BUTTON,
 	"KEY_TOUCHPAD_TOGGLE":          KEY_TOUCHPAD_TOGGLE,
@@ -1218,6 +1222,24 @@ var ecodes = map[string]int{
 	"KEY_KBDINPUTASSIST_NEXTGROUP": KEY_KBDINPUTASSIST_NEXTGROUP,
 	"KEY_KBDINPUTASSIST_ACCEPT":    KEY_KBDINPUTASSIST_ACCEPT,
 	"KEY_KBDINPUTASSIST_CANCEL":    KEY_KBDINPUTASSIST_CANCEL,
+	"KEY_RIGHT_UP":                 KEY_RIGHT_UP,
+	"KEY_RIGHT_DOWN":               KEY_RIGHT_DOWN,
+	"KEY_LEFT_UP":                  KEY_LEFT_UP,
+	"KEY_LEFT_DOWN":                KEY_LEFT_DOWN,
+	"KEY_ROOT_MENU":                KEY_ROOT_MENU,
+	"KEY_MEDIA_TOP_MENU":           KEY_MEDIA_TOP_MENU,
+	"KEY_NUMERIC_11":               KEY_NUMERIC_11,
+	"KEY_NUMERIC_12":               KEY_NUMERIC_12,
+	"KEY_AUDIO_DESC":               KEY_AUDIO_DESC,
+	"KEY_3D_MODE":                  KEY_3D_MODE,
+	"KEY_NEXT_FAVORITE":            KEY_NEXT_FAVORITE,
+	"KEY_STOP_RECORD":              KEY_STOP_RECORD,
+	"KEY_PAUSE_RECORD":             KEY_PAUSE_RECORD,
+	"KEY_VOD":                      KEY_VOD,
+	"KEY_UNMUTE":                   KEY_UNMUTE,
+	"KEY_FASTREVERSE":              KEY_FASTREVERSE,
+	"KEY_SLOWREVERSE":              KEY_SLOWREVERSE,
+	"KEY_DATA":                     KEY_DATA,
 	"BTN_TRIGGER_HAPPY":            BTN_TRIGGER_HAPPY,
 	"BTN_TRIGGER_HAPPY1":           BTN_TRIGGER_HAPPY1,
 	"BTN_TRIGGER_HAPPY2":           BTN_TRIGGER_HAPPY2,
@@ -1333,6 +1355,7 @@ var ecodes = map[string]int{
 	"SW_ROTATE_LOCK":               SW_ROTATE_LOCK,
 	"SW_LINEIN_INSERT":             SW_LINEIN_INSERT,
 	"SW_MUTE_DEVICE":               SW_MUTE_DEVICE,
+	"SW_PEN_INSERTED":              SW_PEN_INSERTED,
 	"SW_MAX":                       SW_MAX,
 	"SW_CNT":                       SW_CNT,
 	"MSC_SERIAL":                   MSC_SERIAL,
@@ -1365,29 +1388,6 @@ var ecodes = map[string]int{
 	"SND_TONE":                     SND_TONE,
 	"SND_MAX":                      SND_MAX,
 	"SND_CNT":                      SND_CNT,
-	"ID_BUS":                       ID_BUS,
-	"ID_VENDOR":                    ID_VENDOR,
-	"ID_PRODUCT":                   ID_PRODUCT,
-	"ID_VERSION":                   ID_VERSION,
-	"BUS_PCI":                      BUS_PCI,
-	"BUS_ISAPNP":                   BUS_ISAPNP,
-	"BUS_USB":                      BUS_USB,
-	"BUS_HIL":                      BUS_HIL,
-	"BUS_BLUETOOTH":                BUS_BLUETOOTH,
-	"BUS_VIRTUAL":                  BUS_VIRTUAL,
-	"BUS_ISA":                      BUS_ISA,
-	"BUS_I8042":                    BUS_I8042,
-	"BUS_XTKBD":                    BUS_XTKBD,
-	"BUS_RS232":                    BUS_RS232,
-	"BUS_GAMEPORT":                 BUS_GAMEPORT,
-	"BUS_PARPORT":                  BUS_PARPORT,
-	"BUS_AMIGA":                    BUS_AMIGA,
-	"BUS_ADB":                      BUS_ADB,
-	"BUS_I2C":                      BUS_I2C,
-	"BUS_HOST":                     BUS_HOST,
-	"BUS_GSC":                      BUS_GSC,
-	"BUS_ATARI":                    BUS_ATARI,
-	"BUS_SPI":                      BUS_SPI,
 }
 
 var KEY = map[int]string{}
