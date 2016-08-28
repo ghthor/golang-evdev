@@ -6,7 +6,7 @@ import (
 )
 
 func ExampleOpen() {
-	device := Open("/dev/input/event3")
+	device, _ := evdev.Open("/dev/input/event3")
 }
 
 // Listing accessible input devices.
@@ -18,7 +18,7 @@ func ExampleListInputdevices() {
 }
 
 func Example() {
-	device := Open("/dev/input/event3")
+	device, _ := evdev.Open("/dev/input/event3")
 
 	fmt.Println(device)
 	// InputDevice /dev/input/event3 (fd 3)
